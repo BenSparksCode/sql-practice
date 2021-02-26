@@ -96,6 +96,18 @@ ORDER BY year DESC, year_rank
 
 ```
 
+### Comments in SQL
+```
+--This is a single line comment in SQL
+
+
+/* Here's
+
+a multi-line
+
+comment in SQL */
+```
+
 ## Advanced SQL Concepts
 
 ```
