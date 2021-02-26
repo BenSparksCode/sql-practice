@@ -90,12 +90,6 @@ WHERE year_rank <= 3
 ORDER BY year DESC, year_rank
 ```
 
-### Aggregation
-
-```
-
-```
-
 ### Comments in SQL
 ```
 --This is a single line comment in SQL
@@ -106,6 +100,12 @@ ORDER BY year DESC, year_rank
 a multi-line
 
 comment in SQL */
+```
+
+## Intermediate SQL Concepts
+
+```
+
 ```
 
 ## Advanced SQL Concepts
