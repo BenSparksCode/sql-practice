@@ -35,14 +35,9 @@ This finds all month names that start with N or an earlier letter in alphabet.
 
 ### Arithmetic
 ```
-SELECT
-  year,
-  month,
-  west,
-  south,
+SELECT year, month, west, south,
   (west + south) / 2 AS south_west_avg
-FROM
-  tutorial.us_housing_units
+FROM tutorial.us_housing_units
 ```
 This find the average across the south and west columns, per entry.
 
@@ -67,12 +62,9 @@ This find the average across the south and west columns, per entry.
 IN checks if the entry's column value is included in a given set of values.
 
 ```
-SELECT
-  *
-FROM
-  tutorial.billboard_top_100_year_end
-WHERE
-  artist IN ('Taylor Swift', 'Usher', 'Ludacris')
+SELECT *
+FROM tutorial.billboard_top_100_year_end
+WHERE artist IN ('Taylor Swift', 'Usher', 'Ludacris')
 ```
 
 ### BETWEEN Operator
@@ -80,12 +72,22 @@ WHERE
 BETWEEN matches values that fall within a specified range.
 
 ```
-SELECT
-  *
-FROM
-  tutorial.billboard_top_100_year_end
-WHERE
-  year_rank BETWEEN 5 AND 10
+SELECT *
+FROM tutorial.billboard_top_100_year_end
+WHERE year_rank BETWEEN 5 AND 10
+```
+
+### ORDER BY
+
+Sorts rows by a specific column(s). Sorts from smallest to largest by default (Ascending).
+
+Use the DESC keyword after the column name to sort from largest to smallest instead.
+
+```
+SELECT *
+FROM tutorial.billboard_top_100_year_end
+WHERE year_rank <= 3
+ORDER BY year DESC, year_rank
 ```
 
 ### Aggregation
