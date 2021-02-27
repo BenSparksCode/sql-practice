@@ -104,8 +104,16 @@ comment in SQL */
 
 ## Intermediate SQL Concepts
 
-```
+### COUNT
 
+Place on the SELECT line. Can be used on non-numerical columns.
+
+- SELECT COUNT(*) = count all results
+- SELECT COUNT(price_high) = only count non-null values in that column
+
+```
+SELECT COUNT(date)
+FROM tutorial.aapl_historical_stock_price
 ```
 
 ## Advanced SQL Concepts
