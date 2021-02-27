@@ -104,6 +104,8 @@ comment in SQL */
 
 ## Intermediate SQL Concepts
 
+Aggregation functions return a single row with one or many aggregated columns.
+
 ### COUNT
 
 Place on the SELECT line. Can be used on non-numerical columns.
@@ -122,6 +124,16 @@ Only works on numerical (summable) columns. Nulls will be evaluated as 0 in the 
 
 ```
 SELECT SUM(volume)
+FROM tutorial.aapl_historical_stock_price
+```
+
+### MIN / MAX
+
+Pulls the smallest/biggest value from the column.
+
+```
+SELECT MIN(volume) AS min_volume,
+       MAX(volume) AS max_volume
 FROM tutorial.aapl_historical_stock_price
 ```
 
