@@ -4,6 +4,15 @@ A place for my SQL notes and practice problem solutions.
 
 # SQL Notes
 
+## Query Clause Order
+
+1. SELECT
+2. FROM
+3. WHERE
+4. GROUP BY
+5. HAVING
+6. ORDER BY
+
 ## Basic SQL Concepts
 
 ### SELECT
