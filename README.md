@@ -149,7 +149,19 @@ FROM tutorial.aapl_historical_stock_price
 WHERE high IS NOT NULL
 ```
 
+### GROUP BY
 
+Aggregation functions like COUNT, AVG, and SUM aggregate across entire table (result in 1 row)
+
+GROUP BY can aggregate by parts of the table resulting in multiple rows (aggregated on sub-categories e.g. month of the year)
+
+GROUP BY comes after FROM in the query.
+
+```
+SELECT year, COUNT(*) AS count
+FROM tutorial.aapl_historical_stock_price
+GROUP BY year
+```
 
 ## Advanced SQL Concepts
 
