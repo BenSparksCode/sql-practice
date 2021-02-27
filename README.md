@@ -137,6 +137,20 @@ SELECT MIN(volume) AS min_volume,
 FROM tutorial.aapl_historical_stock_price
 ```
 
+### AVG
+
+AVG finds an arithmetic mean average of a column.
+
+Only accepts numerical columns and completely ignores null values. To include nulls as 0, pre-convert them to 0 before aggregating with AVG.
+
+```
+SELECT AVG(high)
+FROM tutorial.aapl_historical_stock_price
+WHERE high IS NOT NULL
+```
+
+
+
 ## Advanced SQL Concepts
 
 ```
