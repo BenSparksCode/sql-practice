@@ -194,6 +194,35 @@ HAVING MAX(high) > 400
 ORDER BY year, month
 ```
 
+### CASE
+
+CASE allows handling of if/then logic.
+
+Must be followed by at least one WHEN/THEN statement.
+
+- WHEN specifies criteria
+- THEN specifies the value result of that criteria
+- Finish with an ELSE case and then END AS [new_col_name]
+
+This query creates the 'is_a_senior' column, and fills the data in dependent on if that entry has 'SR' as the value in the 'year' column.
+```
+SELECT player_name,
+       year,
+       CASE WHEN year = 'SR' THEN 'yes'
+            ELSE 'no' END AS is_a_senior
+FROM benn.college_football_players
+```
+A more complex example:
+```
+SELECT player_name,
+       weight,
+       CASE WHEN weight > 250 THEN 'over 250'
+            WHEN weight > 200 AND weight <= 250 THEN '201-250'
+            WHEN weight > 175 AND weight <= 200 THEN '176-200'
+            ELSE '175 or under' END AS weight_group
+FROM benn.college_football_players
+```
+
 ## Advanced SQL Concepts
 
 ```
