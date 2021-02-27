@@ -222,6 +222,29 @@ SELECT player_name,
             ELSE '175 or under' END AS weight_group
 FROM benn.college_football_players
 ```
+CASE with aggregate functions:
+```
+SELECT CASE WHEN year = 'FR' THEN 'FR'
+            WHEN year = 'SO' THEN 'SO'
+            WHEN year = 'JR' THEN 'JR'
+            WHEN year = 'SR' THEN 'SR'
+            ELSE 'No Year Data' END AS year_group,
+            COUNT(1) AS count
+FROM benn.college_football_players
+GROUP BY CASE WHEN year = 'FR' THEN 'FR'
+               WHEN year = 'SO' THEN 'SO'
+               WHEN year = 'JR' THEN 'JR'
+               WHEN year = 'SR' THEN 'SR'
+               ELSE 'No Year Data' END
+```
+CASE inside aggregate functions:
+```
+SELECT COUNT(CASE WHEN year = 'FR' THEN 1 ELSE NULL END) AS fr_count,
+       COUNT(CASE WHEN year = 'SO' THEN 1 ELSE NULL END) AS so_count,
+       COUNT(CASE WHEN year = 'JR' THEN 1 ELSE NULL END) AS jr_count,
+       COUNT(CASE WHEN year = 'SR' THEN 1 ELSE NULL END) AS sr_count
+FROM benn.college_football_players
+```
 
 ## Advanced SQL Concepts
 
