@@ -116,6 +116,15 @@ SELECT COUNT(date)
 FROM tutorial.aapl_historical_stock_price
 ```
 
+### SUM
+
+Only works on numerical (summable) columns. Nulls will be evaluated as 0 in the SUM.
+
+```
+SELECT SUM(volume)
+FROM tutorial.aapl_historical_stock_price
+```
+
 ## Advanced SQL Concepts
 
 ```
