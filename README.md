@@ -1,8 +1,6 @@
-# SQL Practice
-A place for my SQL notes and practice problem solutions.
-
-
 # SQL Notes
+
+A place to store my SQL notes and practice problems. 
 
 ## Query Clause Order
 
@@ -180,6 +178,20 @@ SELECT year,
 FROM tutorial.aapl_historical_stock_price
 GROUP BY year, month
 ORDER BY month, year
+```
+
+### HAVING
+
+HAVING is similar to the WHERE clause, but useful when you can't use the WHERE clause (when aggregating with GROUP BY).
+
+```
+SELECT year,
+       month,
+       MAX(high) AS month_high
+FROM tutorial.aapl_historical_stock_price
+GROUP BY year, month
+HAVING MAX(high) > 400
+ORDER BY year, month
 ```
 
 ## Advanced SQL Concepts
