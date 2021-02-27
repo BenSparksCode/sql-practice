@@ -162,6 +162,16 @@ SELECT year, COUNT(*) AS count
 FROM tutorial.aapl_historical_stock_price
 GROUP BY year
 ```
+or GROUP BY multiple columns, which usually also needs an ORDER BY to order the results in a sensible way:
+
+```
+SELECT year,
+       month,
+       COUNT(*) AS count
+FROM tutorial.aapl_historical_stock_price
+GROUP BY year, month
+ORDER BY month, year
+```
 
 ## Advanced SQL Concepts
 
