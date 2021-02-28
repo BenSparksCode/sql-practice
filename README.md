@@ -259,6 +259,22 @@ SELECT COUNT(DISTINCT month) AS unique_months
 FROM tutorial.aapl_historical_stock_price
 ```
 
+### Basic JOIN
+
+Combines data from multiple tables, by connecting them via some relationship.
+
+Follows this pattern:
+- FROM [table1]
+- JOIN [table2]
+- ON [column in table1] = [column in table2]
+
+```
+SELECT *
+FROM benn.college_football_players players
+JOIN benn.college_football_teams teams
+ON teams.school_name = players.school_name
+```
+
 ## Advanced SQL Concepts
 
 ```
