@@ -11,7 +11,9 @@ A place to store my SQL notes and practice problems.
 5. HAVING
 6. ORDER BY
 
-## Basic SQL Concepts
+## [Basic SQL Concepts](https://mode.com/sql-tutorial/introduction-to-sql/)
+
+
 
 ### SELECT
 ```
@@ -109,7 +111,7 @@ a multi-line
 comment in SQL */
 ```
 
-## Intermediate SQL Concepts
+## [Intermediate SQL Concepts](https://mode.com/sql-tutorial/intro-to-intermediate-sql/)
 
 Aggregation functions return a single row with one or many aggregated columns.
 
@@ -371,7 +373,10 @@ FROM tutorial.crunchbase_investments_part2
 ```
 
 
-## Advanced SQL Concepts
+## [Advanced SQL Concepts](https://mode.com/sql-tutorial/intro-to-advanced-sql/)
+
+
+
 
 ```
 
