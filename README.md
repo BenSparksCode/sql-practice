@@ -246,6 +246,19 @@ SELECT COUNT(CASE WHEN year = 'FR' THEN 1 ELSE NULL END) AS fr_count,
 FROM benn.college_football_players
 ```
 
+### DISTINCT
+
+Returns only unique values.
+
+In aggregations, DISTINCT goes inside the aggregation function.
+
+DISTINCT can cause very slow queries in aggregations.
+
+```
+SELECT COUNT(DISTINCT month) AS unique_months
+FROM tutorial.aapl_historical_stock_price
+```
+
 ## Advanced SQL Concepts
 
 ```
