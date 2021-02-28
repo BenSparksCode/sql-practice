@@ -309,6 +309,53 @@ LEFT JOIN tutorial.crunchbase_acquisitions acquisitions
 ON companies.permalink = acquisitions.company_permalink
 ```
 
+### RIGHT JOIN
+
+Returns unmatched and matched rows from the right table, and only matched rows from the left table.
+
+```
+SELECT companies.permalink AS companies_permalink,
+       companies.name AS companies_name,
+       acquisitions.company_permalink AS acquisitions_permalink,
+       acquisitions.acquired_at AS acquired_date
+FROM tutorial.crunchbase_acquisitions acquisitions
+RIGHT JOIN tutorial.crunchbase_companies companies
+ON companies.permalink = acquisitions.company_permalink
+```
+
+### WHERE vs ON in JOINs
+
+Filtering with ON will apply only in one table (before joining):
+
+```
+SELECT companies.permalink AS companies_permalink,
+       companies.name AS companies_name,
+       acquisitions.company_permalink AS acquisitions_permalink,
+       acquisitions.acquired_at AS acquired_date
+FROM tutorial.crunchbase_companies companies
+LEFT JOIN tutorial.crunchbase_acquisitions acquisitions
+ON companies.permalink = acquisitions.company_permalink
+AND acquisitions.company_permalink != '/company/1000memories'
+ORDER BY 1
+```
+
+Filtering with WHERE is applied after the data join, and so applies to data from both tables:
+
+```
+SELECT companies.permalink AS companies_permalink,
+       companies.name AS companies_name,
+       acquisitions.company_permalink AS acquisitions_permalink,
+       acquisitions.acquired_at AS acquired_date
+FROM tutorial.crunchbase_companies companies
+LEFT JOIN tutorial.crunchbase_acquisitions acquisitions
+ON companies.permalink = acquisitions.company_permalink
+WHERE acquisitions.company_permalink != '/company/1000memories'
+OR acquisitions.company_permalink IS NULL
+ORDER BY 1
+```
+
+
+
 ## Advanced SQL Concepts
 
 ```
