@@ -275,6 +275,19 @@ JOIN benn.college_football_teams teams
 ON teams.school_name = players.school_name
 ```
 
+### INNER JOIN
+
+Equivalent of intersection between 2 sets (tables).
+
+```
+SELECT players.school_name AS players_school_name,
+       teams.school_name AS teams_school_name
+FROM benn.college_football_players players
+JOIN benn.college_football_teams teams
+ON teams.school_name = players.school_name
+```
+
+
 ## Advanced SQL Concepts
 
 ```
