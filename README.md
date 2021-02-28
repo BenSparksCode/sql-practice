@@ -354,6 +354,21 @@ OR acquisitions.company_permalink IS NULL
 ORDER BY 1
 ```
 
+### UNION
+
+UNION lets you write multiple different SELECT queries, then combine them into a single table of results.
+
+UNION only selects distinct values by default, but UNION ALL will avoid this and include duplicates. 
+
+```
+SELECT *
+FROM tutorial.crunchbase_investments_part1
+
+UNION
+
+SELECT *
+FROM tutorial.crunchbase_investments_part2
+```
 
 
 ## Advanced SQL Concepts
