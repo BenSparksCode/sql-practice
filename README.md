@@ -372,6 +372,22 @@ SELECT *
 FROM tutorial.crunchbase_investments_part2
 ```
 
+### JOINs with Comparison Operators
+
+Applies a fitlering step to a table in the JOIN process (so before data from other tables is involved).
+
+```
+SELECT companies.permalink,
+       companies.name,
+       companies.status,
+       COUNT(investments.investor_permalink) AS investors
+FROM tutorial.crunchbase_companies companies
+LEFT JOIN tutorial.crunchbase_investments_part1 investments
+ON companies.permalink = investments.company_permalink
+WHERE investments.funded_year > companies.founded_year + 5
+GROUP BY 1,2, 3
+```
+
 
 ## [Advanced SQL Concepts](https://mode.com/sql-tutorial/intro-to-advanced-sql/)
 
