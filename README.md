@@ -280,13 +280,25 @@ ON teams.school_name = players.school_name
 Equivalent of intersection between 2 sets (tables).
 
 ```
-SELECT players.school_name AS players_school_name,
-       teams.school_name AS teams_school_name
+SELECT players.*, teams.*
 FROM benn.college_football_players players
 JOIN benn.college_football_teams teams
 ON teams.school_name = players.school_name
 ```
 
+### OUTER JOIN
+
+Similar to INNER JOIN but OUTER JOIN can return unmatched rows in one or both tables.
+
+Types of outer join:
+- LEFT JOIN = Returns only unmatched rows from left table.
+- RIGHT JOIN = Returns only unmatched rows from right table.
+- FULL OUTER JOIN = Returns unmatched rows from both tables. 
+
+
+```
+
+```
 
 ## Advanced SQL Concepts
 
