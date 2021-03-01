@@ -425,9 +425,17 @@ ORDER BY 1
 
 ## [Advanced SQL Concepts](https://mode.com/sql-tutorial/intro-to-advanced-sql/)
 
+### Data Types
 
+- String = VARACHAR(1024) = Any characters, max length 1024 chars
+- Date/Time = TIMESTAMP = Date and time value
+- Number = DOUBLE PRECISION = Up to 17 digits, with decimals
+- Boolean = BOOLEAN = True/False
 
+Can use CAST or CONVERT to change data types in queries.
 
 ```
-
+SELECT CAST(funding_total_usd AS varchar) AS funding_total_usd_string,
+       founded_at_clean::varchar AS founded_at_string
+FROM tutorial.crunchbase_companies_clean_date
 ```
