@@ -499,3 +499,14 @@ JOIN ( SELECT date,
 ON incidents.date = sub.date
 ORDER BY sub.incidents DESC, time
 ```
+
+# TO DO
+
+### Window Functions
+
+https://mode.com/sql-tutorial/sql-window-functions/
+
+
+### Pivoting Data
+
+https://mode.com/sql-tutorial/sql-pivot-table/
