@@ -439,3 +439,17 @@ SELECT CAST(funding_total_usd AS varchar) AS funding_total_usd_string,
        founded_at_clean::varchar AS founded_at_string
 FROM tutorial.crunchbase_companies_clean_date
 ```
+
+### String Functions
+
+- LEFT(s,n), RIGHT(s,n) = selects substring of n chars starting from left/right of string s. 
+- LENGTH(s) = Returns the length of string s.
+- TRIM(both '()' FROM col) = Removes all brackets from start and end of the string in col. 
+- POSITION('c' in name) = Returns the numerical position of character 'c' in the name value.
+- STRPOS(name, 'c') = Same thing as POSITION
+- SUBSTR(name, 4, 2) = Returns substring in name starting 4 chars in, with a length of 2 chars.
+- CONCAT(name, ',' surname) = Returns a joined string, separated by a comma in this case.
+- || = Same as CONCAT, works like '+' between strings in Python.
+- UPPER/LOWER = Converts string to upper/lower case.
+- EXTRACT('year' FROM date) = Returns the year part of the date.
+- COALESCE(name, 'no name') = Replaces null values in a column with a specified value.  
