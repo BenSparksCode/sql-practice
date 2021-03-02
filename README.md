@@ -452,4 +452,50 @@ FROM tutorial.crunchbase_companies_clean_date
 - || = Same as CONCAT, works like '+' between strings in Python.
 - UPPER/LOWER = Converts string to upper/lower case.
 - EXTRACT('year' FROM date) = Returns the year part of the date.
-- COALESCE(name, 'no name') = Replaces null values in a column with a specified value.  
+- COALESCE(name, 'no name') = Replaces null values in a column with a specified value.
+
+### Subqueries
+
+Also known as inner queries or nested queries.
+
+```
+SELECT sub.*
+FROM (
+        SELECT *
+        FROM tutorial.sf_crime_incidents_2014_01
+        WHERE day_of_week = 'Friday'
+      ) sub
+WHERE sub.resolution = 'NONE'
+```
+
+Using subqueries to aggregate at multiple stages:
+
+```
+SELECT LEFT(sub.date, 2) AS cleaned_month,
+       sub.day_of_week,
+       AVG(sub.incidents) AS average_incidents
+FROM (
+      SELECT day_of_week,
+              date,
+              COUNT(incidnt_num) AS incidents
+      FROM tutorial.sf_crime_incidents_2014_01
+      GROUP BY 1,2
+      ) sub
+GROUP BY 1,2
+ORDER BY 1,2
+```
+
+Joining subqueries:
+
+```
+SELECT incidents.*,
+       sub.incidents AS incidents_that_day
+FROM tutorial.sf_crime_incidents_2014_01 incidents
+JOIN ( SELECT date,
+        COUNT(incidnt_num) AS incidents
+        FROM tutorial.sf_crime_incidents_2014_01
+        GROUP BY 1
+      ) sub
+ON incidents.date = sub.date
+ORDER BY sub.incidents DESC, time
+```
